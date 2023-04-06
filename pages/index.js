@@ -1,6 +1,8 @@
 import React,{ Component } from 'react';
 import factory from '../ethereum/factory';   //TO get the instance of the deployed contract
-import { Card } from 'semantic-ui-react'; 
+import { Card,Button } from 'semantic-ui-react'; 
+import 'semantic-ui-css/semantic.min.css';
+import Layout from '../Components/Layout';
 
 class CampaignIndex extends Component{
 
@@ -24,8 +26,19 @@ class CampaignIndex extends Component{
 
     render() {
         return(
-            // <div>{this.props.campaigns[0]}</div>
-            <div>{this.renderCampaings()}</div>
+            <Layout>
+                {/* <div>{this.props.campaigns[0]}</div> */}
+                <div>
+                    <h1>Open Campaigns</h1>
+                    <Button 
+                        content = "Create Campaign"
+                        icon = "add circle"
+                        primary
+                        floated = "right"
+                    />
+                    {this.renderCampaings()}
+                </div>
+            </Layout>
         )
     }
     
